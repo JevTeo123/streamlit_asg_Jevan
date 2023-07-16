@@ -5,3 +5,4 @@ import snowflake.connector
 from urllib.error import URLError
 
 st.text('Hello World')
+st.write('Customer RFM Model')
