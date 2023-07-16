@@ -13,3 +13,5 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.markdown('<p class="big-font">Customer_RFM Model</p>', unsafe_allow_html=True)
+# Predictor Variables
+AVG_AMT = st.slider('Input Average Amount', 20-58.4)
