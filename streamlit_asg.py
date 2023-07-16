@@ -4,10 +4,12 @@ import requests
 import snowflake.connector
 from urllib.error import URLError
 
-st.write('Customer RFM Model')
+st.markdown("""
 <style>
 .big-font {
     font-size:300px !important;
 }
 </style>
 """, unsafe_allow_html=True)
+
+st.markdown('<p class="big-font">Customer_RFM Model</p>', unsafe_allow_html=True)
