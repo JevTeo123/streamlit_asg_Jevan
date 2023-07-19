@@ -13,6 +13,8 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+model = pickle.load(open('model.pkl', 'rb'))
+
 st.markdown('<p class="big-font">Customer_RFM Model</p>', unsafe_allow_html=True)
 # Predictor Variables
 AVG_AMT = st.slider('Input Average Amount', 20, 58)
