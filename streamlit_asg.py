@@ -22,6 +22,8 @@ def main():
     # Predictor Variables
     AVG_AMT = st.slider('Input Average Amount', 20, 58)
     AVG_QUANTITY = st.slider('Input Average Quantity', 3, 6)
+    CITY = st.selectbox('What is the city you want to predict customer's spend rank?', ('San Mateo', 'Denver', 'New York City', 'Seattle', 'Boston'))
+    
 
 if __name__ =='__main__':
     main()
