@@ -7,7 +7,7 @@ import sklearn
 #model = pickle.load(open('model.pkl', 'rb'))
 
 def predict_spend_rank(AVG_AMT, CITY, AVG_QUANTITY):
-    input = np.array([[AVG_AMT, CITY, AVG_QUANTITY]]).astype(np.float64)
+    input = np.asarray([[AVG_AMT, CITY, AVG_QUANTITY]])
     prediction = model.predict(input)
     return int(prediction)
 def main():
