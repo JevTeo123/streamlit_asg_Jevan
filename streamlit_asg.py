@@ -42,7 +42,7 @@ def main():
 
         if output == 0:
             st.markdown(low_spender_html, unsafe_allow_html=True)
-        elif output = 1:
+        elif output == 1:
             st.markdown(high_spender_html, unsafe_allow_html=True)
     
 
