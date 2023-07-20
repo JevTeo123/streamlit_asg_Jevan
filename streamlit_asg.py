@@ -30,7 +30,7 @@ def main():
     FREQ_SUBCAT = st.slider('Input Frequent Subcategory', 2)
     CHILDREN_COUNT = st.slider('Input Children Count', 0)
     MARITAL_STATUS = st.slider('Input Marital Status', 1)
-    FREQ_CATEGORY = st.slider('Input Frequent Category', 0, 0)
+    FREQ_CATEGORY = st.slider('Input Frequent Category', 0)
     
     low_spender_html="""
         <div style="background-color:#80ff80; padding:10px >
