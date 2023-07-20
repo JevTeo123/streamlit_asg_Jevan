@@ -1,3 +1,4 @@
 #requirements.txt
 snowflake-connector-python
 scikit-learn==0.24.2
+joblib==1.1.1
