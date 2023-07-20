@@ -22,7 +22,7 @@ def main():
     # Predictor Variables
     AVG_AMT = st.slider('Input Average Amount', 20, 58)
     AVG_QUANTITY = st.slider('Input Average Quantity', 3, 6)
-    option = st.selectbox(
+    CITY = st.selectbox(
         'Input City',
         ('San Mateo', 'Denver', 'New York City', 'Seattle', 'Boston'))
     low_spender_html="""
