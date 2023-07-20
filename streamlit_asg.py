@@ -22,9 +22,8 @@ def main():
     # Predictor Variables
     AVG_AMT = st.slider('Input Average Amount', 20, 58)
     AVG_QUANTITY = st.slider('Input Average Quantity', 3, 6)
-    CITY = st.selectbox(
-        'Input City',
-        ('San Mateo', 'Denver', 'New York City', 'Seattle', 'Boston'))
+    st.markdown('<p class="big-font">0:San Mateo, 1:Denver, 2:New York City, 3:Seattle, 4:Boston</p>', unsafe_allow_html=True)
+    CITY = st.slider('Input City Code', 0, 5)
     low_spender_html="""
         <div style="background-color:#80ff80; padding:10px >
         <h2 style="color:white;text-align:center;"> The customer is a low spender</h2>
