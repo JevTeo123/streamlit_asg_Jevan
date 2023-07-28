@@ -28,7 +28,7 @@ def main():
     MEAN_PROFIT = st.slider('Input Mean Profit', 7.36)
     AGE = st.slider('Input Age', 50)
     GENDER = st.slider('Input Gender', 1)
-    FREQ_SUBCAT = st.slider('Input Frequent Subcategory', 2)
+    FREQ_SUBCAT = st.number_input('Input Frequent Subcategory', value = 2)
     CHILDREN_COUNT = st.slider('Input Children Count', 0)
     MARITAL_STATUS = st.slider('Input Marital Status', 1)
     FREQ_CATEGORY = st.slider('Input Frequent Category', 0)
