@@ -4,7 +4,7 @@ import pickle
 import numpy as np
 import sklearn
 #from snowflake.snowpark.session import Session
-model = pickle.load(open('model.pkl', 'rb'))
+model = pickle.load(open('model(2).pkl', 'rb'))
 
 def predict_spend_rank(AVG_AMT, CITY, AVG_QUANTITY, MEAN_PROFIT, AGE, GENDER, FREQ_SUBCAT, CHILDREN_COUNT, MARITAL_STATUS, FREQ_CATEGORY):
     input = np.asarray([[AVG_AMT, CITY, AVG_QUANTITY, MEAN_PROFIT, AGE, GENDER, FREQ_SUBCAT, CHILDREN_COUNT, MARITAL_STATUS, FREQ_CATEGORY]])
