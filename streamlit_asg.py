@@ -3,12 +3,15 @@ import streamlit as st
 import pickle
 import numpy as np
 import sklearn
+from sklearn.preprocessing import StandardScaler
 #from snowflake.snowpark.session import Session
 model = pickle.load(open('model (2).pkl', 'rb'))
+scaler = StandardScaler()
 
 def predict_spend_rank(AVG_AMT, CITY, AVG_QUANTITY, MEAN_PROFIT, AGE, GENDER, FREQ_SUBCAT, CHILDREN_COUNT, MARITAL_STATUS, FREQ_CATEGORY):
     input = np.asarray([[AVG_AMT, CITY, AVG_QUANTITY, MEAN_PROFIT, AGE, GENDER, FREQ_SUBCAT, CHILDREN_COUNT, MARITAL_STATUS, FREQ_CATEGORY]])
-    prediction = model.predict(input)
+    input_array_scaled = scaler.transform(input)
+    prediction = model.predict(input_array_scaled)
     return int(prediction)
 def main():
     st.markdown("""
