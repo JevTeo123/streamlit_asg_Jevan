@@ -18,7 +18,7 @@ def predict_spend_rank(AVG_AMT, CITY, AVG_QUANTITY, MEAN_PROFIT, AGE, GENDER, FR
     st.write("Original Input Data:")
     st.write(input)
     st.write("Scaled Input Data:")
-    st.write(input_data_scaled)
+    st.write(input_array_scaled)
     prediction = model.predict(input_array_scaled)
     return int(prediction)
 def main():
