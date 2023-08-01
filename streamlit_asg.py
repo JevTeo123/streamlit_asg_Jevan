@@ -16,7 +16,7 @@ def predict_spend_rank(AVG_AMT, CITY, AVG_QUANTITY, MEAN_PROFIT, AGE, GENDER, FR
     input_array_scaled = scaler.fit_transform(input)
     # input_array_scaled = scaler.transform(input)
     st.write("Original Input Data:")
-    st.write(input_data)
+    st.write(input)
     st.write("Scaled Input Data:")
     st.write(input_data_scaled)
     prediction = model.predict(input_array_scaled)
