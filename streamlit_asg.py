@@ -2,6 +2,7 @@
 import streamlit as st
 import pickle
 import numpy as np
+import pandas as pd
 import sklearn
 #from snowflake.snowpark.session import Session
 #model = pickle.load(open('model.pkl', 'rb'))
