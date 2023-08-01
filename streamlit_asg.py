@@ -16,7 +16,7 @@ def predict_spend_rank(data):
     input_array_scaled = scaler.transform(data)
     # input_array_scaled = scaler.transform(input)
     st.write("Original Input Data:")
-    st.write(input)
+    st.write(data)
     st.write("Scaled Input Data:")
     st.write(input_array_scaled)
     prediction = model.predict(input_array_scaled)
