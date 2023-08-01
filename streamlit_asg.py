@@ -8,12 +8,11 @@ import sklearn
 model = pickle.load(open('model.pkl', 'rb'))
 scaler = pickle.load(open('scaler.pkl', 'rb'))
 
-
-def predict_spend_rank(CITY, GENDER, MARITAL_STATUS, CHILDREN_COUNT, AVG_AMT, AVG_QUANTITY, FREQ_CATEGORY, FREQ_SUBCAT, MEAN_PROFIT, AGE):
-    input = np.asarray([[CITY, GENDER, MARITAL_STATUS, CHILDREN_COUNT, AVG_AMT, AVG_QUANTITY, FREQ_CATEGORY, FREQ_SUBCAT, MEAN_PROFIT, AGE]])
+input_data = pd.DataFrame(columns = [CITY, GENDER, MARITAL_STATUS, CHILDREN_COUNT, AVG_AMT, AVG_QUANTITY, FREQ_CATEGORY, FREQ_SUBCAT, MEAN_PROFIT, AGE])
+def predict_spend_rank(data):
     #mean = scaler.mean_
     #scale = scaler.scale_
-    input_array_scaled = scaler.transform(input)
+    input_array_scaled = scaler.transform(data)
     # input_array_scaled = scaler.transform(input)
     st.write("Original Input Data:")
     st.write(input)
@@ -43,6 +42,9 @@ def main():
     CHILDREN_COUNT = st.number_input('Input Children Count', value = 0)
     MARITAL_STATUS = st.number_input('Input Marital Status', value = 1)
     FREQ_CATEGORY = st.number_input('Input Frequent Category', value = 0)
+
+    input_data.loc[0] = [CITY, GENDER, MARITAL_STATUS, CHILDREN_COUNT, AVG_AMT, AVG_QUANTITY, FREQ_CATEGORY, FREQ_SUBCAT, MEAN_PROFIT, AGE]
+    
     
     low_spender_html="""
         <div style="background-color:#80ff80; padding:10px >
@@ -56,7 +58,7 @@ def main():
     """
     
     if st.button("Predict the spend rank of the customer"):
-        output = predict_spend_rank(CITY, GENDER, MARITAL_STATUS, CHILDREN_COUNT, AVG_AMT, AVG_QUANTITY, FREQ_CATEGORY, FREQ_SUBCAT, MEAN_PROFIT, AGE)
+        output = predict_spend_rank(input_data)
         st.success('The spend rank is {}'.format(output))
 
         if output == 0:
