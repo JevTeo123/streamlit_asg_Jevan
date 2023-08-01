@@ -56,7 +56,7 @@ def main():
     """
     
     if st.button("Predict the spend rank of the customer"):
-        output = predict_spend_rank(AVG_AMT, CITY, AVG_QUANTITY, MEAN_PROFIT, AGE, GENDER, FREQ_SUBCAT, CHILDREN_COUNT, MARITAL_STATUS, FREQ_CATEGORY)
+        output = predict_spend_rank(CITY, GENDER, MARITAL_STATUS, CHILDREN_COUNT, AVG_AMT, AVG_QUANTITY, FREQ_CATEGORY, FREQ_SUBCAT, MEAN_PROFIT, AGE)
         st.success('The spend rank is {}'.format(output))
 
         if output == 0:
