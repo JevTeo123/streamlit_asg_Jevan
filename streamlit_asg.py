@@ -4,6 +4,7 @@ import pickle
 import numpy as np
 import sklearn
 #from snowflake.snowpark.session import Session
+#model = pickle.load(open('model.pkl', 'rb'))
 model = pickle.load(open('model.pkl', 'rb'))
 scaler = pickle.load(open('scaler.pkl', 'rb'))
 
