@@ -8,15 +8,14 @@ import sklearn
 model = pickle.load(open('model.pkl', 'rb'))
 scaler = pickle.load(open('scaler.pkl', 'rb'))
 
-@st.cache()
 
 def predict_spend_rank(AVG_AMT, CITY, AVG_QUANTITY, MEAN_PROFIT, AGE, GENDER, FREQ_SUBCAT, CHILDREN_COUNT, MARITAL_STATUS, FREQ_CATEGORY):
     input = np.asarray([[AVG_AMT, CITY, AVG_QUANTITY, MEAN_PROFIT, AGE, GENDER, FREQ_SUBCAT, CHILDREN_COUNT, MARITAL_STATUS, FREQ_CATEGORY]])
-    st.write(input)
     #mean = scaler.mean_
     #scale = scaler.scale_
     input_array_scaled = scaler.transform(input)
     # input_array_scaled = scaler.transform(input)
+    st.write(input_array_scaled)
     prediction = model.predict(input_array_scaled)
     return int(prediction)
 def main():
