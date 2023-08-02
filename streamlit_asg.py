@@ -25,7 +25,7 @@ def predict_spend_rank(data):
 def main():
     with st.sidebar:
         selected = option_menu(
-            menu_title="Main Menu",
+            menu_title=None,
             options=["Home", "Customer Segmentation Model"],
             default_index = 0,
             orientation="horizontal"
