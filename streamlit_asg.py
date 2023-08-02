@@ -25,8 +25,8 @@ def predict_spend_rank(data):
 def main():
     with st.sidebar:
         selected = option_menu(
-            menu_title="Main Menu"
-            options=["Home", "Customer Segmentation Model"]
+            menu_title="Main Menu",
+            options=["Home", "Customer Segmentation Model"],
         )
     if selected == "Home":
         st.title(f"You have selected {selected}")
