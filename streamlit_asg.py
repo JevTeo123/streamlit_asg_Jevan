@@ -9,8 +9,15 @@ from streamlit_option_menu import option_menu
 #model = pickle.load(open('model.pkl', 'rb'))
 model = pickle.load(open('model.pkl', 'rb'))
 scaler = pickle.load(open('scaler.pkl', 'rb'))
-with st.sidebar:
-        selected = option_menu(
+# with st.sidebar:
+#         selected = option_menu(
+#             menu_title=None,
+#             options=["Home", "Customer Segmentation Model"],
+#             default_index = 0,
+#             orientation="horizontal",
+#             menu_icon="cast",
+#         )
+selected = option_menu(
             menu_title=None,
             options=["Home", "Customer Segmentation Model"],
             default_index = 0,
