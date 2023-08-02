@@ -17,9 +17,9 @@ with st.sidebar:
             orientation="horizontal",
             menu_icon="cast",
         )
-    if selected == "Home":
+if selected == "Home":
         st.title(f"You have selected {selected}")
-    if selected == "Customer Segmentation Model":
+if selected == "Customer Segmentation Model":
         st.title(f"You have selected {selected}")
 input_data = pd.DataFrame(columns = ['CITY', 'GENDER', 'MARITAL_STATUS', 'CHILDREN_COUNT', 'AVG_AMT', 'AVG_QUANTITY', 'FREQ_CATEGORY', 'FREQ_SUBCAT', 'MEAN_PROFIT', 'AGE'])
 def predict_spend_rank(data):
