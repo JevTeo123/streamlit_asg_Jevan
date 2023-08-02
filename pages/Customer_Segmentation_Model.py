@@ -8,7 +8,6 @@ from streamlit_option_menu import option_menu
 model = pickle.load(open('model.pkl', 'rb'))
 scaler = pickle.load(open('scaler.pkl', 'rb'))
 input_data = pd.DataFrame(columns = ['CITY', 'GENDER', 'MARITAL_STATUS', 'CHILDREN_COUNT', 'AVG_AMT', 'AVG_QUANTITY', 'FREQ_CATEGORY', 'FREQ_SUBCAT', 'MEAN_PROFIT', 'AGE'])
-st.title("Customer Segmentation Model")
 def predict_spend_rank(data):
     #mean = scaler.mean_
     #scale = scaler.scale_
@@ -21,6 +20,7 @@ def predict_spend_rank(data):
     prediction = model.predict(input_array_scaled)
     return int(prediction)
 def main():
+        st.title("Customer Segmentation Model")
         st.markdown("""
         <style>
         .big-font {
