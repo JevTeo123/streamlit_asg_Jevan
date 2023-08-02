@@ -16,8 +16,7 @@ selected = option_menu(
             menu_icon="cast",
         )
 if selected == "Home":
-    if __name__ =='__main__':
-                main()
+    st.title(f"You have selected {selected}")
 if selected == "Customer Segmentation Model":
         st.title(f"You have selected {selected}")
 model = pickle.load(open('model.pkl', 'rb'))
