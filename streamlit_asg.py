@@ -9,27 +9,6 @@ from streamlit_option_menu import option_menu
 #model = pickle.load(open('model.pkl', 'rb'))
 model = pickle.load(open('model.pkl', 'rb'))
 scaler = pickle.load(open('scaler.pkl', 'rb'))
-# with st.sidebar:
-#         selected = option_menu(
-#             menu_title=None,
-#             options=["Home", "Customer Segmentation Model"],
-#             default_index = 0,
-#             orientation="horizontal",
-#             menu_icon="cast",
-#         )
-selected = option_menu(
-            menu_title=None,
-            options=["Home", "Customer Segmentation Model"],
-            icons=["house", "person-square"],
-            default_index = 0,
-            orientation="horizontal",
-            menu_icon="cast",
-        )
-if selected == "Home":
-        if __name__ =='__main__':
-                main()
-if selected == "Customer Segmentation Model":
-        st.title(f"You have selected {selected}")
 input_data = pd.DataFrame(columns = ['CITY', 'GENDER', 'MARITAL_STATUS', 'CHILDREN_COUNT', 'AVG_AMT', 'AVG_QUANTITY', 'FREQ_CATEGORY', 'FREQ_SUBCAT', 'MEAN_PROFIT', 'AGE'])
 def predict_spend_rank(data):
     #mean = scaler.mean_
@@ -43,6 +22,18 @@ def predict_spend_rank(data):
     prediction = model.predict(input_array_scaled)
     return int(prediction)
 def main():
+    selected = option_menu(
+            menu_title=None,
+            options=["Home", "Customer Segmentation Model"],
+            icons=["house", "person-square"],
+            default_index = 0,
+            orientation="horizontal",
+            menu_icon="cast",
+        )
+if selected == "Home":
+        st.title(f"You have selected {selected}")
+if selected == "Customer Segmentation Model":
+        st.title(f"You have selected {selected}")
     st.markdown("""
     <style>
     .big-font {
