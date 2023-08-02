@@ -28,7 +28,7 @@ def main():
             menu_title=None,
             options=["Home", "Customer Segmentation Model"],
             default_index = 0,
-            orientation="horizontal"
+            orientation="horizontal",
         )
     if selected == "Home":
         st.title(f"You have selected {selected}")
