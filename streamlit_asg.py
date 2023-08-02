@@ -31,7 +31,7 @@ def main():
             menu_icon="cast",
         )
     if selected == "Home":
-                st.markdown("""
+        st.markdown("""
         <style>
         .big-font {
             font-size:30px !important;
