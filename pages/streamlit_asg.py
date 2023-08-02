@@ -7,18 +7,6 @@ import sklearn
 from streamlit_option_menu import option_menu 
 #from snowflake.snowpark.session import Session
 #model = pickle.load(open('model.pkl', 'rb'))
-selected = option_menu(
-            menu_title=None,
-            options=["Home", "Customer Segmentation Model"],
-            icons=["house", "person-square"],
-            default_index = 0,
-            orientation="horizontal",
-            menu_icon="cast",
-        )
-if selected == "Home":
-    st.title(f"You have selected {selected}")
-if selected == "Customer Segmentation Model":
-        st.title(f"You have selected {selected}")
 model = pickle.load(open('model.pkl', 'rb'))
 scaler = pickle.load(open('scaler.pkl', 'rb'))
 input_data = pd.DataFrame(columns = ['CITY', 'GENDER', 'MARITAL_STATUS', 'CHILDREN_COUNT', 'AVG_AMT', 'AVG_QUANTITY', 'FREQ_CATEGORY', 'FREQ_SUBCAT', 'MEAN_PROFIT', 'AGE'])
@@ -78,3 +66,5 @@ def main():
                 st.markdown(low_spender_html, unsafe_allow_html=True)
             elif output == 1:
                 st.markdown(high_spender_html, unsafe_allow_html=True)
+if __name__ == "__main__":
+            main()
