@@ -79,5 +79,6 @@ def main():
             elif output == 1:
                 st.markdown(high_spender_html, unsafe_allow_html=True)
 
-if __name__ == 
+if __name__ =='__main__':
+    main()
 
