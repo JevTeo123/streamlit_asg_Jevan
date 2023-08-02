@@ -4,6 +4,7 @@ import pickle
 import numpy as np
 import pandas as pd
 import sklearn
+from streamlit_option_menu import option_menu 
 #from snowflake.snowpark.session import Session
 #model = pickle.load(open('model.pkl', 'rb'))
 model = pickle.load(open('model.pkl', 'rb'))
@@ -22,6 +23,15 @@ def predict_spend_rank(data):
     prediction = model.predict(input_array_scaled)
     return int(prediction)
 def main():
+    with st.sidebar:
+        selected = option_menu(
+            menu_title="Main Menu"
+            options=["Home", "Customer Segmentation Model"]
+        )
+    if selected == "Home":
+        st.title(f"You have selected {selected}")
+    if selected == "Customer Segmentation Model":
+        st.title(f"You have selected {selected}")
     st.markdown("""
     <style>
     .big-font {
