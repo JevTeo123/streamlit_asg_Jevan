@@ -78,6 +78,6 @@ def main():
                 st.markdown(low_spender_html, unsafe_allow_html=True)
             elif output == 1:
                 st.markdown(high_spender_html, unsafe_allow_html=True)
-    
-    
+
+if __name__ == 
 
