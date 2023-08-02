@@ -30,10 +30,10 @@ def main():
             orientation="horizontal",
             menu_icon="cast",
         )
-if selected == "Home":
-        st.title(f"You have selected {selected}")
-if selected == "Customer Segmentation Model":
-        st.title(f"You have selected {selected}")
+    if selected == "Home":
+            st.title(f"You have selected {selected}")
+    if selected == "Customer Segmentation Model":
+            st.title(f"You have selected {selected}")
     st.markdown("""
     <style>
     .big-font {
