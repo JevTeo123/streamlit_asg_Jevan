@@ -26,7 +26,7 @@ selected = option_menu(
             menu_icon="cast",
         )
 if selected == "Home":
-        st.title(f"You have selected {selected}")
+        main()
 if selected == "Customer Segmentation Model":
         st.title(f"You have selected {selected}")
 input_data = pd.DataFrame(columns = ['CITY', 'GENDER', 'MARITAL_STATUS', 'CHILDREN_COUNT', 'AVG_AMT', 'AVG_QUANTITY', 'FREQ_CATEGORY', 'FREQ_SUBCAT', 'MEAN_PROFIT', 'AGE'])
@@ -88,5 +88,3 @@ def main():
             st.markdown(high_spender_html, unsafe_allow_html=True)
     
 
-if __name__ =='__main__':
-    main()
