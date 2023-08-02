@@ -26,7 +26,8 @@ selected = option_menu(
             menu_icon="cast",
         )
 if selected == "Home":
-        main()
+        if __name__ =='__main__':
+                main()
 if selected == "Customer Segmentation Model":
         st.title(f"You have selected {selected}")
 input_data = pd.DataFrame(columns = ['CITY', 'GENDER', 'MARITAL_STATUS', 'CHILDREN_COUNT', 'AVG_AMT', 'AVG_QUANTITY', 'FREQ_CATEGORY', 'FREQ_SUBCAT', 'MEAN_PROFIT', 'AGE'])
