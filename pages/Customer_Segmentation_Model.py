@@ -7,7 +7,7 @@ import sklearn
 from streamlit_option_menu import option_menu 
 model = pickle.load(open('model.pkl', 'rb'))
 scaler = pickle.load(open('scaler.pkl', 'rb'))
-input_data = pd.DataFrame(columns = ['CITY', 'GENDER', 'MARITAL_STATUS', 'CHILDREN_COUNT', 'AVG_AMT', 'AVG_QUANTITY', 'FREQ_CATEGORY', 'FREQ_SUBCAT', 'MEAN_PROFIT', 'AGE'])
+input_data = pd.DataFrame(columns = ['CITY', 'GENDER', 'MARITAL_STATUS', 'CHILDREN_COUNT', 'AVG_AMT', 'AVG_QUANTITY', 'FREQ_CATEGORY', 'FREQ_SUBCAT', 'MEAN_PROFIT', 'DAY_DIFF', 'AGE'])
 def predict_spend_rank(data):
     #mean = scaler.mean_
     #scale = scaler.scale_
@@ -29,8 +29,8 @@ def main():
         </style>
         """, unsafe_allow_html=True)
         # Predictor Variables
-        AVG_AMT = st.number_input('Input Average Amount', 20, 58)
-        AVG_QUANTITY = st.number_input('Input Average Quantity', 3, 6)
+        AVG_AMT = st.number_input('Input Average Amount', 0, 60)
+        AVG_QUANTITY = st.number_input('Input Average Quantity', 0, 50)
         st.markdown('<p class="normal-font">0:San Mateo, 1:Denver, 2:New York City, 3:Seattle, 4:Boston</p>', unsafe_allow_html=True)
         CITY = st.slider('Input City Code', 0, 5)
         MEAN_PROFIT = st.number_input('Input Mean Profit', 7.36)
@@ -41,7 +41,7 @@ def main():
         MARITAL_STATUS = st.number_input('Input Marital Status', value = 1)
         FREQ_CATEGORY = st.number_input('Input Frequent Category', value = 0)
     
-        input_data.loc[0] = [CITY, GENDER, MARITAL_STATUS, CHILDREN_COUNT, AVG_AMT, AVG_QUANTITY, FREQ_CATEGORY, FREQ_SUBCAT, MEAN_PROFIT, AGE]
+        input_data.loc[0] = [CITY, GENDER, MARITAL_STATUS, CHILDREN_COUNT, AVG_AMT, AVG_QUANTITY, FREQ_CATEGORY, FREQ_SUBCAT, MEAN_PROFIT, DAY_DIFF, AGE]
         
         
         low_spender_html="""
