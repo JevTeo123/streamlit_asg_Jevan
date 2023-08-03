@@ -33,6 +33,7 @@ def main():
         AVG_QUANTITY = st.number_input('Input Average Quantity', 0, 50)
         st.markdown('<p class="normal-font">0:San Mateo, 1:Denver, 2:New York City, 3:Seattle, 4:Boston</p>', unsafe_allow_html=True)
         CITY = st.slider('Input City Code', 0, 5)
+        DAY_DIFF = st.number_input('How many days since your last purchase?', 0, 1000)
         MEAN_PROFIT = st.number_input('Input Mean Profit', 7.36)
         AGE = st.number_input('Input Age', 50)
         GENDER = st.number_input('Input Gender', 1)
