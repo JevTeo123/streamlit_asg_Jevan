@@ -31,7 +31,7 @@ def main():
         # Predictor Variables
         AVG_AMT = 38
         AVG_QUANTITY = 4
-        st.markdown('<p class="normal-font">0:San Mateo, 1:Denver, 2:New York City, 3:Seattle, 4:Boston</p>', unsafe_allow_html=True)
+        st.markdown('<p class="normal-font">10613:San Mateo, 9122:Denver, 10016:New York City, 7288:Seattle, 9122:Boston</p>', unsafe_allow_html=True)
         CITY = st.slider('Input City Code', 0, 5)
         DAY_DIFF = st.number_input('What is the average number of days between your first three transactions?', 0, 1000)
         FREQ_SUBCAT = st.number_input('Input Frequent Subcategory', value = 2)
