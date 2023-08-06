@@ -5,8 +5,8 @@ import numpy as np
 import pandas as pd
 import sklearn
 from streamlit_option_menu import option_menu 
-model = pickle.load(open('model.pkl', 'rb'))
-scaler = pickle.load(open('scaler.pkl', 'rb'))
+model = pickle.load(open('model (1).pkl', 'rb'))
+scaler = pickle.load(open('scaler (1).pkl', 'rb'))
 input_data = pd.DataFrame(columns = ['CITY', 'GENDER', 'MARITAL_STATUS', 'CHILDREN_COUNT', 'AVG_AMT', 'AVG_QUANTITY', 'FREQ_CATEGORY', 'FREQ_SUBCAT', 'MEAN_PROFIT', 'DAY_DIFF', 'AGE'])
 def predict_spend_rank(data):
     #mean = scaler.mean_
