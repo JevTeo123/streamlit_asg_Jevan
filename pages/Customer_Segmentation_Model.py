@@ -30,17 +30,17 @@ def main():
         """, unsafe_allow_html=True)
         # Predictor Variables
         AVG_AMT = 38
-        AVG_QUANTITY = st.number_input('Input Average Quantity', 0, 50)
+        AVG_QUANTITY = 4
         st.markdown('<p class="normal-font">0:San Mateo, 1:Denver, 2:New York City, 3:Seattle, 4:Boston</p>', unsafe_allow_html=True)
         CITY = st.slider('Input City Code', 0, 5)
-        DAY_DIFF = st.number_input('How many days since your last purchase?', 0, 1000)
-        MEAN_PROFIT = st.number_input('Input Mean Profit', 7.36)
-        AGE = st.number_input('Input Age', 50)
-        GENDER = st.number_input('Input Gender', 1)
+        DAY_DIFF = st.number_input('What is the average number of days between your first three transactions?', 0, 1000)
         FREQ_SUBCAT = st.number_input('Input Frequent Subcategory', value = 2)
-        CHILDREN_COUNT = st.number_input('Input Children Count', value = 0)
-        MARITAL_STATUS = st.number_input('Input Marital Status', value = 1)
-        FREQ_CATEGORY = st.number_input('Input Frequent Category', value = 0)
+        MEAN_PROFIT =7.36
+        AGE = 50
+        GENDER = 1
+        CHILDREN_COUNT = 0
+        MARITAL_STATUS = 1
+        FREQ_CATEGORY = 0
     
         input_data.loc[0] = [CITY, GENDER, MARITAL_STATUS, CHILDREN_COUNT, AVG_AMT, AVG_QUANTITY, FREQ_CATEGORY, FREQ_SUBCAT, MEAN_PROFIT, DAY_DIFF, AGE]
         
