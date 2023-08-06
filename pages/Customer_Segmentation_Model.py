@@ -29,7 +29,7 @@ def main():
         </style>
         """, unsafe_allow_html=True)
         # Predictor Variables
-        AVG_AMT = st.number_input('Input Average Amount', 0, 60)
+        AVG_AMT = 38
         AVG_QUANTITY = st.number_input('Input Average Quantity', 0, 50)
         st.markdown('<p class="normal-font">0:San Mateo, 1:Denver, 2:New York City, 3:Seattle, 4:Boston</p>', unsafe_allow_html=True)
         CITY = st.slider('Input City Code', 0, 5)
