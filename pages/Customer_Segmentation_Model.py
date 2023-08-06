@@ -32,7 +32,7 @@ def main():
         AVG_AMT = 38
         AVG_QUANTITY = 4
         st.markdown('<p class="normal-font">10613:San Mateo, 9122:Denver, 10016:New York City, 7288:Seattle, 9122:Boston</p>', unsafe_allow_html=True)
-        CITY = st.slider('Input City Code', 0, 5)
+        CITY = st.number_input('Input City Code', 0, 12000)
         DAY_DIFF = st.number_input('What is the average number of days between your first three transactions?', 0, 1000)
         FREQ_SUBCAT = st.number_input('Input Frequent Subcategory', value = 2)
         MEAN_PROFIT =7.36
