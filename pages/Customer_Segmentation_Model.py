@@ -8,16 +8,20 @@ from streamlit_option_menu import option_menu
 model = pickle.load(open('cust_analysis_RF.pkl', 'rb'))
 scaler = pickle.load(open('cust_analysis_RF_input.pkl', 'rb'))
 #input_data = pd.DataFrame(columns = ['CITY', 'GENDER', 'MARITAL_STATUS', 'CHILDREN_COUNT', 'AVG_AMT', 'AVG_QUANTITY', 'FREQ_CATEGORY', 'FREQ_SUBCAT', 'MEAN_PROFIT', 'DAY_DIFF', 'AGE'])
+def manual_standardize(data, mean, stds):
+    standardized_data = (data - means) / stds
+    return standardized_data
 def predict_spend_rank(data):
-    #input_array_scaled = scaler.transform(data)
-    new_input_data_reshaped = data.reshape(1, -1)
-    input_array_scaled = scaler.transform(new_input_data_reshaped)
-    st.write()
+    # new_input_data_reshaped = data.reshape(1, -1)
+    # input_array_scaled = scaler.transform(new_input_data_reshaped)
+    means = np.array([9396.284536, 0.643758, 0.899028, 1.093952, 38.506258, 4.148999, 0, 1.868661, 1211.778155, 101.773115, 50.184144])
+    stds = np.array([1042.916747, 0.663325, 0.937720, 1.381112, 4.216048, 0.408388, 0, 0.425341, 271.497877, 87.299936, 19.275835])
+    standardized_data = manual_standardized(data, means, stds)
     st.write("Scaled Input Data:")
-    st.write(input_array_scaled)
+    st.write(standardized_data)
     #st.write("Scaled Input Data:")
     #st.write(input_array_scaled)
-    prediction = model.predict(input_array_scaled)
+    prediction = model.predict(standardized_data.reshape(1, -1))
     return int(prediction)
 def main():
         st.title("Customer Segmentation Model")
