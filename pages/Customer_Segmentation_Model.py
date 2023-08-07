@@ -8,7 +8,7 @@ from streamlit_option_menu import option_menu
 model = pickle.load(open('cust_analysis_RF.pkl', 'rb'))
 scaler = pickle.load(open('cust_analysis_RF_input.pkl', 'rb'))
 #input_data = pd.DataFrame(columns = ['CITY', 'GENDER', 'MARITAL_STATUS', 'CHILDREN_COUNT', 'AVG_AMT', 'AVG_QUANTITY', 'FREQ_CATEGORY', 'FREQ_SUBCAT', 'MEAN_PROFIT', 'DAY_DIFF', 'AGE'])
-def manual_standardize(data, mean, stds):
+def manual_standardize(data, means, stds):
     standardized_data = (data - means) / stds
     return standardized_data
 def predict_spend_rank(data):
