@@ -54,7 +54,7 @@ def main():
         """
         
         if st.button("Predict the spend rank of the customer"):
-            input_data = np.asarray([CITY, GENDER, MARITAL_STATUS, CHILDREN_COUNT, AVG_AMT, AVG_QUANTITY, FREQ_CATEGORY, FREQ_SUBCAT, MEAN_PROFIT, DAY_DIFF, AGE])
+            input_data = np.asarray([CITY, GENDER, MARITAL_STATUS, CHILDREN_COUNT, AVG_AMT, AVG_QUANTITY, FREQ_CATEGORY, FREQ_SUBCAT, MEAN_PROFIT, DAY_DIFF, AGE], dtype = np.float64)
             output = predict_spend_rank(input_data)
             st.success('The spend rank is {}'.format(output))
     
