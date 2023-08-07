@@ -73,6 +73,8 @@ def main():
         if st.button("Predict the spend rank of the customer"):
             output = predict_spend_rank(input_data)
             st.success('The spend rank is {}'.format(output))
+            st.subheader("Scaled Input Data:")
+            st.write(input_data_scaled)
     
             if output == 0:
                 st.markdown(low_spender_html, unsafe_allow_html=True)
