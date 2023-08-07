@@ -11,7 +11,7 @@ input_data = pd.DataFrame(columns = ['CITY', 'GENDER', 'MARITAL_STATUS', 'CHILDR
 def predict_spend_rank(data):
     #mean = scaler.mean_
     #scale = scaler.scale_
-    input_array_scaled = scaler.transform(data)
+    #input_array_scaled = scaler.transform(data)
     # input_array_scaled = scaler.transform(input)
     st.write("Original Input Data:")
     st.write(data)
@@ -41,9 +41,23 @@ def main():
         CHILDREN_COUNT = 0
         MARITAL_STATUS = 1
         FREQ_CATEGORY = 0
+
+         input_dict = {
+            'CITY': CITY,
+            'GENDER': GENDER,
+            'MARITAL_STATUS': MARITAL_STATUS,
+            'CHILDREN_COUNT': CHILDREN_COUNT,
+            'AVG_AMT': 38,  # You can adjust these default values
+            'AVG_QUANTITY': 4,  # as needed for your application
+            'FREQ_CATEGORY': FREQ_CATEGORY,
+            'FREQ_SUBCAT': FREQ_SUBCAT,
+            'MEAN_PROFIT': MEAN_PROFIT,
+            'DAY_DIFF': DAY_DIFF,
+            'AGE': AGE
+        }
     
-        input_data.loc[0] = [CITY, GENDER, MARITAL_STATUS, CHILDREN_COUNT, AVG_AMT, AVG_QUANTITY, FREQ_CATEGORY, FREQ_SUBCAT, MEAN_PROFIT, DAY_DIFF, AGE]
-        
+        input_data = pd.DataFrame(input_dict, index=[0])
+        input_data_scaled = scaler.transform(input_data)
         
         low_spender_html="""
             <div style="background-color:#80ff80; padding:10px >
