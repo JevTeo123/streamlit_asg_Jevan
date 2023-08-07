@@ -42,7 +42,7 @@ def main():
         MARITAL_STATUS = 1
         FREQ_CATEGORY = 0
 
-         input_dict = {
+        input_dict = {
             'CITY': CITY,
             'GENDER': GENDER,
             'MARITAL_STATUS': MARITAL_STATUS,
