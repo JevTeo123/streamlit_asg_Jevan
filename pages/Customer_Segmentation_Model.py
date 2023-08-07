@@ -57,7 +57,9 @@ def main():
         }
     
         input_data = pd.DataFrame(input_dict, index=[0])
+        print("Shape of input_data before scaling:", input_data.shape)
         input_data_scaled = scaler.transform(input_data)
+        print("Shape of input_data_scaled:", input_data_scaled.shape) 
         
         low_spender_html="""
             <div style="background-color:#80ff80; padding:10px >
