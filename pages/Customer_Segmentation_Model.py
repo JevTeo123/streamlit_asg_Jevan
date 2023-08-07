@@ -8,9 +8,10 @@ from streamlit_option_menu import option_menu
 model = pickle.load(open('cust_analysis_RF.pkl', 'rb'))
 scaler = pickle.load(open('cust_analysis_RF_input.pkl', 'rb'))
 #input_data = pd.DataFrame(columns = ['CITY', 'GENDER', 'MARITAL_STATUS', 'CHILDREN_COUNT', 'AVG_AMT', 'AVG_QUANTITY', 'FREQ_CATEGORY', 'FREQ_SUBCAT', 'MEAN_PROFIT', 'DAY_DIFF', 'AGE'])
+input_data = [['CITY', 'GENDER', 'MARITAL_STATUS', 'CHILDREN_COUNT', 'AVG_AMT', 'AVG_QUANTITY', 'FREQ_CATEGORY', 'FREQ_SUBCAT', 'MEAN_PROFIT', 'DAY_DIFF', 'AGE']]
 def predict_spend_rank(data):
     #input_array_scaled = scaler.transform(data)
-    #input_array_scaled = scaler.transform(input)
+    input_array_scaled = scaler.transform(input_data)
     st.write("Original Input Data:")
     st.write(data)
     #st.write("Scaled Input Data:")
@@ -39,22 +40,6 @@ def main():
         CHILDREN_COUNT = 0
         MARITAL_STATUS = 1
         FREQ_CATEGORY = 0
-
-        input_dict = {
-            'CITY': CITY,
-            'GENDER': GENDER,
-            'MARITAL_STATUS': MARITAL_STATUS,
-            'CHILDREN_COUNT': CHILDREN_COUNT,
-            'AVG_AMT': 38,  # You can adjust these default values
-            'AVG_QUANTITY': 4,  # as needed for your application
-            'FREQ_CATEGORY': FREQ_CATEGORY,
-            'FREQ_SUBCAT': FREQ_SUBCAT,
-            'MEAN_PROFIT': MEAN_PROFIT,
-            'DAY_DIFF': DAY_DIFF,
-            'AGE': AGE
-        }
-    
-        input_data = pd.DataFrame(input_dict, index=[0])
         
         low_spender_html="""
             <div style="background-color:#80ff80; padding:10px >
@@ -68,11 +53,8 @@ def main():
         """
         
         if st.button("Predict the spend rank of the customer"):
-            input_data_scaled = scaler.transform(input_data)
             output = predict_spend_rank(input_data)
             st.success('The spend rank is {}'.format(output))
-            st.subheader("Scaled Input Data:")
-            st.write(input_data_scaled)
     
             if output == 0:
                 st.markdown(low_spender_html, unsafe_allow_html=True)
