@@ -11,13 +11,13 @@ input_data = pd.DataFrame(columns = ['CITY', 'GENDER', 'MARITAL_STATUS', 'CHILDR
 def predict_spend_rank(data):
     #mean = scaler.mean_
     #scale = scaler.scale_
-    input_array_scaled = scaler.transform(data)
-    input_array_scaled = scaler.transform(input)
+    #input_array_scaled = scaler.transform(data)
+    #input_array_scaled = scaler.transform(input)
     st.write("Original Input Data:")
     st.write(data)
-    st.write("Scaled Input Data:")
-    st.write(input_array_scaled)
-    prediction = model.predict(input_array_scaled)
+    #st.write("Scaled Input Data:")
+    #st.write(input_array_scaled)
+    prediction = model.predict(data)
     return int(prediction)
 def main():
         st.title("Customer Segmentation Model")
