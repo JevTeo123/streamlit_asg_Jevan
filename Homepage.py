@@ -4,6 +4,7 @@ import pickle
 import numpy as np
 import pandas as pd
 import sklearn
+import altair as alt
 from streamlit_option_menu import option_menu 
 model = pickle.load(open('cust_analysis_RF_Jevan.pkl', 'rb'))
 scaler = pickle.load(open('cust_analysis_RF_input.pkl', 'rb'))
