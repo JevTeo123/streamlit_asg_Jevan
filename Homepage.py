@@ -11,7 +11,7 @@ scaler = pickle.load(open('cust_analysis_RF_input.pkl', 'rb'))
 with st.sidebar:
     selected = option_menu(
         menu_title="Main Menu",
-        options=["Home", "Customer Segmentation Model", "SHAP on Model"],
+        options=["Home", "Customer Segmentation Model", "LIME Explanation on Model"],
         icons=["house", "person-circle", "pie-chart"]
     )
 if selected == "Home":
@@ -87,3 +87,5 @@ if selected == "Customer Segmentation Model":
                     st.markdown(high_spender_html, unsafe_allow_html=True)
     if __name__ == "__main__":
                 main()
+if selected == "LIME Explanation on Model":
+    explainer = lime.lime_tabular.LimeTabularExplainer()
