@@ -54,7 +54,6 @@ if selected == "Customer Segmentation Model":
             }
             AVG_AMT = 38
             AVG_QUANTITY = 4
-            st.markdown('<p class="normal-font">10613:San Mateo, 9122:Denver, 10016:New York City, 7288:Seattle, 9261:Boston</p>', unsafe_allow_html=True)
             CITY = 10613 #Used the city of San Mateo as it has the highest sales, more room to work on
             DAY_DIFF = st.number_input('What is the average number of days between your first three transactions?', 0, 1000)
             #FREQ_SUBCAT = st.number_input('Input Frequent Subcategory', value = 2)
