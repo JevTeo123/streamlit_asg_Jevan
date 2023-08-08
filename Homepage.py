@@ -94,6 +94,7 @@ if selected == "Customer Segmentation Model":
     if __name__ == "__main__":
                 main()
 if selected == "LIME Explanation on Model":
+    st.title("Average Total Transaction by high or low spender")
     spender_avg_trans = df.groupby(['SPEND_RANK'])['TOTAL_TRANS'].mean()
     st.bar_chart(spender_avg_trans)
    
