@@ -94,4 +94,4 @@ if selected == "Customer Segmentation Model":
                 main()
 if selected == "LIME Explanation on Model":
     mean_total_trans = df['TOTAL_TRANS'].mean()
-    st.bar_chart(x = df['SPEND_RANK'], 'mean_total_trans')
+    st.bar_chart(x = df['SPEND_RANK'], df['total_trans])
