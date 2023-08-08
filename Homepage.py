@@ -37,8 +37,6 @@ if selected == "Customer Segmentation Model":
         means = np.array([9396.284536, 0.643758, 0.899028, 1.093952, 38.506258, 4.148999, 1.868661, 1211.778155, 101.773115, 57.798256, 50.184144])
         stds = np.array([1042.916747, 0.663325, 0.937720, 1.381112, 4.216048, 0.408388, 0.425341, 271.497877, 87.299936, 10.638129, 19.275835])
         standardized_data = manual_standardize(data, means, stds)
-        st.write("Scaled Input Data:")
-        st.write(standardized_data)
         #st.write("Scaled Input Data:")
         #st.write(input_array_scaled)
         prediction = model.predict(standardized_data.reshape(1, -1))
@@ -82,7 +80,7 @@ if selected == "Customer Segmentation Model":
                 <h2 style="color:white;text-align:center;"> The customer is a high spender 💰</h2>
                 </div>
             """
-            if st.button("Predict the spend rank of the customer"):
+            if st.button("Predict the spend rank of the customer"🏆):
                 input_data = np.asarray([CITY, GENDER, MARITAL_STATUS, CHILDREN_COUNT, AVG_AMT, AVG_QUANTITY, FREQ_SUBCAT, MEAN_PROFIT, DAY_DIFF, TOTAL_TRANS, AGE], dtype = np.float64)
                 output = predict_spend_rank(input_data)
                 st.success('The spend rank is {}'.format(output))
@@ -98,5 +96,6 @@ if selected == "Distinct Insights":
     st.markdown('<p class="big-font">Average Total Transaction by high or low spender</p>', unsafe_allow_html=True)
     spender_avg_trans = df.groupby(['SPEND_RANK'])['TOTAL_TRANS'].mean()
     st.bar_chart(spender_avg_trans)
-    st.markdown('<p class="normal-font">Customers who are high spenders typically have a average total number of transactions of 63 and above while customers who are low spenders have an average total number of transactions of 51 and below.</p>', unsafe_allow_html=True)
+    text = '<p class="normal-font">Customers who are high spenders typically have an average total number of transactions of <span style="color: green;">63 and above</span> while customers who are low spenders have an average total number of transactions of <span style="color: red;">51 and below</span>.</p>'
+    st.markdown(text, unsafe_allow_html=True)
     st.title()
