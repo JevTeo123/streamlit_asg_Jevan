@@ -28,8 +28,8 @@ if selected == "Customer Segmentation Model":
     def predict_spend_rank(data):
         # new_input_data_reshaped = data.reshape(1, -1)
         # input_array_scaled = scaler.transform(new_input_data_reshaped)
-        means = np.array([9396.284536, 0.643758, 0.899028, 1.093952, 38.506258, 4.148999, 1.868661, 1211.778155, 101.773115, 50.184144])
-        stds = np.array([1042.916747, 0.663325, 0.937720, 1.381112, 4.216048, 0.408388, 0.425341, 271.497877, 87.299936, 19.275835])
+        means = np.array([9396.284536, 0.643758, 0.899028, 1.093952, 38.506258, 4.148999, 1.868661, 1211.778155, 101.773115, 57.798256, 50.184144])
+        stds = np.array([1042.916747, 0.663325, 0.937720, 1.381112, 4.216048, 0.408388, 0.425341, 271.497877, 87.299936, 10.638129, 19.275835])
         standardized_data = manual_standardize(data, means, stds)
         st.write("Scaled Input Data:")
         st.write(standardized_data)
@@ -60,10 +60,11 @@ if selected == "Customer Segmentation Model":
             FREQ_SUBCAT_options = st.selectbox("What is the frequent subcategory of items you order?", list(freq_subcat_mapping.keys()))
             FREQ_SUBCAT = freq_subcat_mapping[FREQ_SUBCAT_options]
             MEAN_PROFIT =7.36
-            AGE = st.number_input("What is your age?", 0, 150)
+            AGE = 50
             GENDER = 1
             CHILDREN_COUNT = 0
             MARITAL_STATUS = 1
+            TOTAL_TRANS = st.number_input('How many transactions have you made with tasty bytes?', 0, 100)
             
             low_spender_html="""
                 <div style="background-color:#80ff80; padding:10px >
@@ -81,7 +82,7 @@ if selected == "Customer Segmentation Model":
             st.write(high_spender_df['DAY_DIFF'].mean())
             st.write(low_spender_df['DAY_DIFF'].mean())
             if st.button("Predict the spend rank of the customer"):
-                input_data = np.asarray([CITY, GENDER, MARITAL_STATUS, CHILDREN_COUNT, AVG_AMT, AVG_QUANTITY, FREQ_SUBCAT, MEAN_PROFIT, DAY_DIFF, AGE], dtype = np.float64)
+                input_data = np.asarray([CITY, GENDER, MARITAL_STATUS, CHILDREN_COUNT, AVG_AMT, AVG_QUANTITY, FREQ_SUBCAT, MEAN_PROFIT, DAY_DIFF, TOTAL_TRANS, AGE], dtype = np.float64)
                 output = predict_spend_rank(input_data)
                 st.success('The spend rank is {}'.format(output))
         
@@ -92,4 +93,4 @@ if selected == "Customer Segmentation Model":
     if __name__ == "__main__":
                 main()
 if selected == "LIME Explanation on Model":
-    explainer = lime.lime_tabular.LimeTabularExplainer()
+    
