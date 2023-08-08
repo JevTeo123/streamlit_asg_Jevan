@@ -18,8 +18,6 @@ with st.sidebar:
 df = pd.read_csv('rest_customer_us.csv')
 high_spender_df = df.loc[df['SPEND_RANK'] == 1]
 low_spender_df = df.loc[df['SPEND_RANK'] == 0]
-st.write(high_spender_df['DAY_DIFF'].mean())
-st.write(low_spender_df['DAY_DIFF'].mean())
 if selected == "Home":
     st.title("Welcome to Jevan's streamlit app!")
     st.sidebar.success("Select a page above.")
