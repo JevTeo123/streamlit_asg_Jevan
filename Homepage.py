@@ -47,12 +47,19 @@ if selected == "Customer Segmentation Model":
             </style>
             """, unsafe_allow_html=True)
             # Predictor Variables
+            freq_subcat_mapping = {
+                "Cold Option": 0,
+                "Warm Option": 1,
+                "Hot Option": 2
+            }
             AVG_AMT = 38
             AVG_QUANTITY = 4
             st.markdown('<p class="normal-font">10613:San Mateo, 9122:Denver, 10016:New York City, 7288:Seattle, 9261:Boston</p>', unsafe_allow_html=True)
             CITY = st.number_input('Input City Code', 0, 12000)
             DAY_DIFF = st.number_input('What is the average number of days between your first three transactions?', 0, 1000)
-            FREQ_SUBCAT = st.number_input('Input Frequent Subcategory', value = 2)
+            #FREQ_SUBCAT = st.number_input('Input Frequent Subcategory', value = 2)
+            FREQ_SUBCAT_options = st.selectbox("What is the frequent subcategory of items you order?", list(freq_subcat_mapping))
+            FREQ_SUBCAT = freq_subcat_mapping[FREQ_SUBCAT_options]
             MEAN_PROFIT =7.36
             AGE = 50
             GENDER = 1
