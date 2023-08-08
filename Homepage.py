@@ -12,7 +12,7 @@ scaler = pickle.load(open('cust_analysis_RF_input.pkl', 'rb'))
 with st.sidebar:
     selected = option_menu(
         menu_title="Main Menu",
-        options=["Home", "Customer Segmentation Model", "LIME Explanation on Model"],
+        options=["Home", "Customer Segmentation Model", "Distinct Insights"],
         icons=["house", "person-circle", "pie-chart"]
     )
 df = pd.read_csv('rest_customer_us.csv')
@@ -93,8 +93,9 @@ if selected == "Customer Segmentation Model":
                     st.markdown(high_spender_html, unsafe_allow_html=True)
     if __name__ == "__main__":
                 main()
-if selected == "LIME Explanation on Model":
+if selected == "Distinct Insights":
     st.title("Average Total Transaction by high or low spender")
     spender_avg_trans = df.groupby(['SPEND_RANK'])['TOTAL_TRANS'].mean()
     st.bar_chart(spender_avg_trans)
-   
+    st.markdown('<p class="normal-font">Customers who are high spenders typically have a average total number of transactions of 64 and above while customers who are low spenders have an average total number of transactions of 53 and below.</p>', unsafe_allow_html=True)
+
