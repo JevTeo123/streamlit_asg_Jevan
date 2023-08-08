@@ -4,8 +4,7 @@ import pickle
 import numpy as np
 import pandas as pd
 import sklearn
-import lime
-import lime.lime_tabular
+from lime.lime_tabular import LimeTabularExplainer
 from streamlit_option_menu import option_menu 
 model = pickle.load(open('cust_analysis_RF.pkl', 'rb'))
 scaler = pickle.load(open('cust_analysis_RF_input.pkl', 'rb'))
