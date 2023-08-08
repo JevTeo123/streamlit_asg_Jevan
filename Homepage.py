@@ -14,6 +14,11 @@ with st.sidebar:
         options=["Home", "Customer Segmentation Model", "LIME Explanation on Model"],
         icons=["house", "person-circle", "pie-chart"]
     )
+df = pd.read_csv('rest_customer_us.csv')
+high_spender_df = df.loc[df['SPEND_RANK'] == 1]
+low_spender_df = df.loc[df['SPEND_RANK'] == 0]
+st.write(high_spender_df['DAY_DIFF'].mean())
+st.write(low_spender_df['DAY_DIFF'].mean())
 if selected == "Home":
     st.title("Welcome to Jevan's streamlit app!")
     st.sidebar.success("Select a page above.")
@@ -76,11 +81,6 @@ if selected == "Customer Segmentation Model":
                 <h2 style="color:white;text-align:center;"> The customer is a high spender 💰</h2>
                 </div>
             """
-            df = pd.read_csv('rest_customer_us.csv')
-            high_spender_df = df.loc[df['SPEND_RANK'] == 1]
-            low_spender_df = df.loc[df['SPEND_RANK'] == 0]
-            st.write(high_spender_df['DAY_DIFF'].mean())
-            st.write(low_spender_df['DAY_DIFF'].mean())
             if st.button("Predict the spend rank of the customer"):
                 input_data = np.asarray([CITY, GENDER, MARITAL_STATUS, CHILDREN_COUNT, AVG_AMT, AVG_QUANTITY, FREQ_SUBCAT, MEAN_PROFIT, DAY_DIFF, TOTAL_TRANS, AGE], dtype = np.float64)
                 output = predict_spend_rank(input_data)
