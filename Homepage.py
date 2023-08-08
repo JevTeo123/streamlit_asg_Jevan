@@ -98,4 +98,4 @@ if selected == "Distinct Insights":
     st.markdown(text, unsafe_allow_html=True)
     day_diff_average = df.groupby(['SPEND_RANK'])['DAY_DIFF'].mean()
     st.markdown('<p class="big-font">Average difference of days in first 3 transactions by high or low spender</p>', unsafe_allow_html=True)
-    st.bar_chart(spender_avg_trans)
+    st.bar_chart(day_diff_average)
