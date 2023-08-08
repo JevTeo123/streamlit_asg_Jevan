@@ -98,5 +98,5 @@ if selected == "Distinct Insights":
     st.markdown('<p class="big-font">Average Total Transaction by high or low spender</p>', unsafe_allow_html=True)
     spender_avg_trans = df.groupby(['SPEND_RANK'])['TOTAL_TRANS'].mean()
     st.bar_chart(spender_avg_trans)
-    st.markdown('<p class="normal-font">Customers who are high spenders typically have a average total number of transactions of 64 and above while customers who are low spenders have an average total number of transactions of 53 and below.</p>', unsafe_allow_html=True)
+    st.markdown('<p class="normal-font">Customers who are high spenders typically have a average total number of transactions of 63 and above while customers who are low spenders have an average total number of transactions of 51 and below.</p>', unsafe_allow_html=True)
     st.title()
