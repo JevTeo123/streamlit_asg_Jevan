@@ -98,4 +98,3 @@ if selected == "Distinct Insights":
     st.bar_chart(spender_avg_trans)
     text = '<p class="normal-font">Customers who are high spenders💰 typically have an average total number of transactions of <span style="color: green;">63 and above</span> while customers who are low spenders 👎 have an average total number of transactions of <span style="color: red;">51 and below</span>.</p>'
     st.markdown(text, unsafe_allow_html=True)
-    st.title()
