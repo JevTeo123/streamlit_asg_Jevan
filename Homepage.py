@@ -76,7 +76,8 @@ if selected == "Customer Segmentation Model":
                 </div>
             """
             df = pd.read_csv('rest_customer_us.csv')
-            st.write(df.head())
+            high_spender_df = df.loc[df['SPEND_RANK'] = 1]
+            st.write(high_spender_df.head())
             if st.button("Predict the spend rank of the customer"):
                 input_data = np.asarray([CITY, GENDER, MARITAL_STATUS, CHILDREN_COUNT, AVG_AMT, AVG_QUANTITY, FREQ_SUBCAT, MEAN_PROFIT, DAY_DIFF, AGE], dtype = np.float64)
                 output = predict_spend_rank(input_data)
