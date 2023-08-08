@@ -93,4 +93,4 @@ if selected == "Customer Segmentation Model":
     if __name__ == "__main__":
                 main()
 if selected == "LIME Explanation on Model":
-    st.write("Hello")
+    st.bar_chart(data=df, x = df['SPEND_RANK'], y = df['TOTAL_TRANS'].mean())
