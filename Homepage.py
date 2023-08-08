@@ -12,7 +12,7 @@ with st.sidebar:
     selected = option_menu(
         menu_title="Main Menu",
         options=["Home", "Customer Segmentation Model", "SHAP on Model"],
-        icons=["house", "person-add", "pie-chart"]
+        icons=["house", "person-circle", "pie-chart"]
     )
 if selected == "Home":
     st.title("Welcome to Jevan's streamlit app!")
