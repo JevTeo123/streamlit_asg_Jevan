@@ -58,7 +58,7 @@ if selected == "Customer Segmentation Model":
             CITY = st.number_input('Input City Code', 0, 12000)
             DAY_DIFF = st.number_input('What is the average number of days between your first three transactions?', 0, 1000)
             #FREQ_SUBCAT = st.number_input('Input Frequent Subcategory', value = 2)
-            FREQ_SUBCAT_options = st.selectbox("What is the frequent subcategory of items you order?", list(freq_subcat_mapping))
+            FREQ_SUBCAT = st.selectbox("What is the frequent subcategory of items you order?", list(freq_subcat_mapping))
             FREQ_SUBCAT = freq_subcat_mapping[FREQ_SUBCAT_options]
             MEAN_PROFIT =7.36
             AGE = 50
