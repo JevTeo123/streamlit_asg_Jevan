@@ -101,30 +101,22 @@ if selected == "Distinct Insights":
     st.bar_chart(day_diff_average)
     text1 = '<p class="normal-font">Customers who are high spenders💰 typically have an average difference of days in first 3 transactions of <span style="color: green;">76 days and below</span> while customers who are low spenders 👎 have an average total number of transactions of <span style="color: red;">127 days and above</span>.</p>'
     st.markdown(text1, unsafe_allow_html = True)
-    # Calculate the count of high and low spenders for each frequent subcategory
-    high_spender_freq_subcat_count = high_spender_df.groupby('FREQ_SUBCAT')['SPEND_RANK'].count().reset_index()
-    low_spender_freq_subcat_count = low_spender_df.groupby('FREQ_SUBCAT')['SPEND_RANK'].count().reset_index()
+   # Group data by SPEND_RANK and FREQ_SUBCAT and count occurrences
+    spender_freq_subcat_count = df.groupby(['SPEND_RANK', 'FREQ_SUBCAT']).size().reset_index(name='COUNT')
     
-    # Merge the counts for high and low spenders based on frequent subcategory
-    merged_count_df = pd.merge(high_spender_freq_subcat_count, low_spender_freq_subcat_count, on='FREQ_SUBCAT', suffixes=('_high', '_low'))
-    
-    # Create a bar chart using Altair
-    chart = alt.Chart(merged_count_df).mark_bar().encode(
-        x='FREQ_SUBCAT:N',
-        y='SPEND_RANK_high:Q',
-        color=alt.value('blue'),
-        tooltip=['FREQ_SUBCAT', 'SPEND_RANK_high']
+    # Create a clustered column chart using Altair
+    chart = alt.Chart(spender_freq_subcat_count).mark_bar().encode(
+        x=alt.X('FREQ_SUBCAT:O', title='Frequent Subcategory'),
+        y=alt.Y('COUNT:Q', title='Count'),
+        color=alt.Color('SPEND_RANK:N', scale=alt.Scale(domain=['0', '1'], range=['red', 'green']), legend=alt.Legend(title='Spend Rank'))
     ).properties(
-        title='Count of High Spenders Based on Frequent Subcategory'
-    )
-    
-    # Overlay the low spender counts on the same chart
-    chart += chart.mark_bar(
-        color='red',
-        y='SPEND_RANK_low'
-    ).encode(
-        tooltip=['SPEND_RANK_low']
+        width=600,
+        height=400,
+        title="Count of High and Low Spenders Based on Frequent Subcategory"
     )
     
     # Display the chart in Streamlit
     st.altair_chart(chart, use_container_width=True)
+    
+    text = '<p class="normal-font">This clustered column chart shows the count of high spenders💰 (green) and low spenders 👎 (red) based on the frequent subcategory of items.</p>'
+    st.markdown(text, unsafe_allow_html=True)
