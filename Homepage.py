@@ -117,7 +117,7 @@ if selected == "Distinct Insights":
         x=alt.X('FREQ_SUBCAT:O', title='Frequent Subcategory'),
         y=alt.Y('COUNT:Q', title='Count'),
         color=alt.Color('SPEND_RANK:N', scale=alt.Scale(domain=['0', '1'], range=['red', 'green']), legend=alt.Legend(title='Spend Rank')),
-        column='SPEND_RANK:N'
+        column=alt.Column('SPEND_RANK:N', title='Spend Rank')
     ).properties(
         width=300,
         height=400,
