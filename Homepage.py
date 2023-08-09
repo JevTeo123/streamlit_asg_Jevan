@@ -93,8 +93,20 @@ if selected == "Customer Segmentation Model":
         
                 if output == 0:
                     st.markdown(low_spender_html, unsafe_allow_html=True)
+                    text1 = '<p class="normal-font">Customer Behavioural Insights</p>'
+                    st.markdown(text1, unsafe_allow_html = True)
+                    gender = filtered_df['GENDER'].mode()
+                    city = filtered_df['CITY'].mode()
+                    marital_status = filtered_df['MARITAL_STATUS'].mode()
+                    formatted_insight = "Based on the input, Customer is most likely to be a {} and lives in {} and is generally {}.".format(gender, city, marital_status) 
+                    st.write(formatted_insight)
                 elif output == 1:
                     st.markdown(high_spender_html, unsafe_allow_html=True)
+                    gender = filtered_df['GENDER'].mode()
+                    city = filtered_df['CITY'].mode()
+                    marital_status = filtered_df['MARITAL_STATUS'].mode()
+                    formatted_insight = "Based on the input, Customer is most likely to be a {} and lives in {} and is generally {}.".format(gender, city, marital_status) 
+                    st.write(formatted_insight)
     if __name__ == "__main__":
                 main()
 if selected == "Distinct Insights":
