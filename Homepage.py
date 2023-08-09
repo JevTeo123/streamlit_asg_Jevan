@@ -106,7 +106,7 @@ if selected == "Distinct Insights":
     1: "Warm Option",
     2: "Hot Option"
     }
-    # Group data by SPEND_RANK and FREQ_SUBCAT and count occurrences
+   # Group data by SPEND_RANK and FREQ_SUBCAT and count occurrences
     spender_freq_subcat_count = df.groupby(['SPEND_RANK', 'FREQ_SUBCAT']).size().reset_index(name='COUNT')
     
     # Update the FREQ_SUBCAT values to their corresponding string labels
@@ -114,7 +114,7 @@ if selected == "Distinct Insights":
     
     # Create a clustered column chart using Altair
     chart = alt.Chart(spender_freq_subcat_count).mark_bar().encode(
-        x=alt.X('FREQ_SUBCAT:O', title='Frequent Subcategory'),
+        x=alt.X('FREQ_SUBCAT:O', title='Frequent Subcategory', sort=list(subcategory_mapping.values())),
         y=alt.Y('COUNT:Q', title='Count'),
         color=alt.Color('SPEND_RANK:N', scale=alt.Scale(domain=['0', '1'], range=['red', 'green']), legend=alt.Legend(title='Spend Rank')),
         column=alt.Column('SPEND_RANK:N', title='Spend Rank')
