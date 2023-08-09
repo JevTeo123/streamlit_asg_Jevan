@@ -78,6 +78,7 @@ if selected == "Customer Segmentation Model":
                 <h2 style="color:white;text-align:center;"> The customer is a high spender 💰</h2>
                 </div>
             """
+            #Filter df by inputs
             filtered_df = df[
             (df['FREQ_SUBCAT'] == FREQ_SUBCAT) &
             (df['DAY_DIFF'] == DAY_DIFF) &
