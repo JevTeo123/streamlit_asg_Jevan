@@ -135,7 +135,7 @@ if selected == "Customer Segmentation Model":
                     city_label = city_mapping.get(city)
                     marital_status_label = marital_status_mapping.get(marital_status)
                     formatted_insight = "Based on the input, Customer is most likely to be a {} and lives in {} and is generally {}.".format(gender_label, city_label, marital_status_label) 
-                    st.subheader("Customer Behavioural Insights🔍")
+                    st.subheader("Customer Behavioural Insights🔍:")
                     st.write(formatted_insight)
                 elif output == 1:
                     st.markdown(high_spender_html, unsafe_allow_html=True)
@@ -167,7 +167,7 @@ if selected == "Customer Segmentation Model":
                     city_label = city_mapping.get(city)
                     marital_status_label = marital_status_mapping.get(marital_status)
                     formatted_insight = "Based on the input, Customer is most likely to be a {} and lives in {} and is generally {}.".format(gender_label, city_label, marital_status_label) 
-                    st.subheader("Customer Behavioural Insights")
+                    st.subheader("Customer Behavioural Insights🔍:")
                     st.write(formatted_insight)
     if __name__ == "__main__":
                 main()
