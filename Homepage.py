@@ -108,7 +108,7 @@ if selected == "Distinct Insights":
                 "Warm Option": 1,
                 "Hot Option": 2
             }
-    spender_freq_subcat_count['FREQ_SUBCAT'] = spender_freq_subcat_count['FREQ_SUBCAT'].map(subcategory_mapping)
+    spender_freq_subcat_count['FREQ_SUBCAT'] = spender_freq_subcat_count['FREQ_SUBCAT'].map(freq_subcat_mapping)
     # Create a clustered column chart using Altair
     chart = alt.Chart(spender_freq_subcat_count).mark_bar().encode(
         x=alt.X('FREQ_SUBCAT:O', title='Frequent Subcategory'),
