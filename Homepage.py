@@ -84,8 +84,8 @@ if selected == "Customer Segmentation Model":
             (df['DAY_DIFF'] == DAY_DIFF) &
             (df['TOTAL_TRANS'] == TOTAL_TRANS)
             ]
-            st.subheader("Filtered Data based on User Inputs:")
-            st.write(filtered_df)
+            #st.subheader("Filtered Data based on User Inputs:")
+            #st.write(filtered_df)
             if st.button("Predict the spend rank of the customer🏆"):
                 input_data = np.asarray([CITY, GENDER, MARITAL_STATUS, CHILDREN_COUNT, AVG_AMT, AVG_QUANTITY, FREQ_SUBCAT, MEAN_PROFIT, DAY_DIFF, TOTAL_TRANS, AGE], dtype = np.float64)
                 output = predict_spend_rank(input_data)
@@ -123,6 +123,7 @@ if selected == "Customer Segmentation Model":
                     city_label = city_mapping.get(city)
                     marital_status_label = marital_status_mapping.get(marital_status)
                     formatted_insight = "Based on the input, Customer is most likely to be a {} and lives in {} and is generally {}.".format(gender_label, city_label, marital_status_label) 
+                    st.subheader("Customer Behavioural Insights")
                     st.write(formatted_insight)
                 elif output == 1:
                     st.markdown(high_spender_html, unsafe_allow_html=True)
@@ -154,6 +155,7 @@ if selected == "Customer Segmentation Model":
                     city_label = city_mapping.get(city)
                     marital_status_label = marital_status_mapping.get(marital_status)
                     formatted_insight = "Based on the input, Customer is most likely to be a {} and lives in {} and is generally {}.".format(gender_label, city_label, marital_status_label) 
+                    st.subheader("Customer Behavioural Insights")
                     st.write(formatted_insight)
     if __name__ == "__main__":
                 main()
