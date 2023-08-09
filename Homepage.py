@@ -129,5 +129,5 @@ if selected == "Distinct Insights":
     st.altair_chart(chart, use_container_width=True)
 
     
-    text = '<p class="normal-font">In general, being a high spender💰 or low spender👎 does not affect the choice of subcategory of items they are purchasing. The subcategory of items with the most count of people buying would be the hot option.☕</p>'
+    text = '<p class="normal-font">In general, being a high spender💰 or low spender👎 does not affect the choice of subcategory of items they are purchasing. The subcategory of items with the most count of people buying would be the <span style="color: green;">hot option</span>.☕</p>'
     st.markdown(text, unsafe_allow_html=True)
