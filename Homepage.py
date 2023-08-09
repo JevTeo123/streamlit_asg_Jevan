@@ -87,16 +87,16 @@ if selected == "Customer Segmentation Model":
             filtered_df = df[specific_condition_filter]
             if(filtered_df.empty):
                 fallback_condition1 = (
-                    (df['Fallback_FREQ_SUBCAT'] == FREQ_SUBCAT) &
-                    (df['Fallback_DAY_DIFF'] == DAY_DIFF)
+                    (df['FREQ_SUBCAT'] == FREQ_SUBCAT) &
+                    (df['DAY_DIFF'] == DAY_DIFF)
                 )
                 fallback_condition2 = (
-                    (df['Fallback_FREQ_SUBCAT'] == FREQ_SUBCAT) &
-                    (df['Fallback_TOTAL_TRANS'] == TOTAL_TRANS)
+                    (df['FREQ_SUBCAT'] == FREQ_SUBCAT) &
+                    (df['TOTAL_TRANS'] == TOTAL_TRANS)
                 )
                 fallback_condition3 = (
-                    (df['Fallback_DAY_DIFF'] == DAY_DIFF) &
-                    (df['Fallback_TOTAL_TRANS'] == TOTAL_TRANS)
+                    (df['DAY_DIFF'] == DAY_DIFF) &
+                    (df['TOTAL_TRANS'] == TOTAL_TRANS)
                 )
                 filtered_df = df[fallback_condition1 | fallback_condition2 | fallback_condition3]
                 
