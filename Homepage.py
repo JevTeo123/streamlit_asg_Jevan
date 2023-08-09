@@ -103,7 +103,7 @@ if selected == "Distinct Insights":
     st.markdown(text1, unsafe_allow_html = True)
    # Group data by SPEND_RANK and FREQ_SUBCAT and count occurrences
     spender_freq_subcat_count = df.groupby(['SPEND_RANK', 'FREQ_SUBCAT']).size().reset_index(name='COUNT')
-    
+    spender_freq_subcat_count['FREQ_SUBCAT'] = spender_freq_subcat_count['FREQ_SUBCAT'].map(subcategory_mapping)
     # Create a clustered column chart using Altair
     chart = alt.Chart(spender_freq_subcat_count).mark_bar().encode(
         x=alt.X('FREQ_SUBCAT:O', title='Frequent Subcategory'),
@@ -118,5 +118,5 @@ if selected == "Distinct Insights":
     # Display the chart in Streamlit
     st.altair_chart(chart, use_container_width=True)
     
-    text = '<p class="normal-font">This clustered column chart shows the count of high spenders💰 (green) and low spenders 👎 (red) based on the frequent subcategory of items.</p>'
+    text = '<p class="normal-font">In general, being a high spender or low spender does not affect the choice of subcategory of items they are purchasing. The subcategory of items with the most count of people buying would be the hot option.</p>'
     st.markdown(text, unsafe_allow_html=True)
