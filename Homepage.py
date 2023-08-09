@@ -101,21 +101,20 @@ if selected == "Distinct Insights":
     st.bar_chart(day_diff_average)
     text1 = '<p class="normal-font">Customers who are high spenders💰 typically have an average difference of days in first 3 transactions of <span style="color: green;">76 days and below</span> while customers who are low spenders 👎 have an average total number of transactions of <span style="color: red;">127 days and above</span>.</p>'
     st.markdown(text1, unsafe_allow_html = True)
-   # Group data by SPEND_RANK and FREQ_SUBCAT and count occurrences
+    # Group data by SPEND_RANK and FREQ_SUBCAT and count occurrences
     spender_freq_subcat_count = df.groupby(['SPEND_RANK', 'FREQ_SUBCAT']).size().reset_index(name='COUNT')
-    freq_subcat_mapping = {
-                "Cold Option": 0,
-                "Warm Option": 1,
-                "Hot Option": 2
-            }
-    spender_freq_subcat_count['FREQ_SUBCAT'] = spender_freq_subcat_count['FREQ_SUBCAT'].map(freq_subcat_mapping)
+    
+    # Update the FREQ_SUBCAT values to their corresponding string labels
+    spender_freq_subcat_count['FREQ_SUBCAT'] = spender_freq_subcat_count['FREQ_SUBCAT'].map(subcategory_mapping)
+    
     # Create a clustered column chart using Altair
     chart = alt.Chart(spender_freq_subcat_count).mark_bar().encode(
         x=alt.X('FREQ_SUBCAT:O', title='Frequent Subcategory'),
         y=alt.Y('COUNT:Q', title='Count'),
-        color=alt.Color('SPEND_RANK:N', scale=alt.Scale(domain=['0', '1'], range=['red', 'green']), legend=alt.Legend(title='Spend Rank'))
+        color=alt.Color('SPEND_RANK:N', scale=alt.Scale(domain=['0', '1'], range=['red', 'green']), legend=alt.Legend(title='Spend Rank')),
+        column='SPEND_RANK:N'
     ).properties(
-        width=600,
+        width=300,
         height=400,
         title="Count of High and Low Spenders Based on Frequent Subcategory"
     )
