@@ -122,12 +122,12 @@ if selected == "Distinct Insights":
     ).properties(
         width=600,
         height=400,
-        title="Count of High and Low Spenders Based on Frequent Subcategory"
+        title="Count of High💰 and Low👎 Spenders Based on Frequent Subcategory"
     )
     
     # Display the chart in Streamlit
     st.altair_chart(chart, use_container_width=True)
 
     
-    text = '<p class="normal-font">In general, being a high spender or low spender does not affect the choice of subcategory of items they are purchasing. The subcategory of items with the most count of people buying would be the hot option.</p>'
+    text = '<p class="normal-font">In general, being a high spender💰 or low spender👎 does not affect the choice of subcategory of items they are purchasing. The subcategory of items with the most count of people buying would be the hot option.☕</p>'
     st.markdown(text, unsafe_allow_html=True)
