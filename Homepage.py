@@ -110,9 +110,9 @@ if selected == "Customer Segmentation Model":
                     gender_modes = filtered_df['GENDER'].mode()
                     city_modes = filtered_df['CITY'].mode()
                     marital_status_modes = filtered_df['MARITAL_STATUS'].mode()
-                    gender = gender_modes.values[0]
-                    city = city_modes.values[0]
-                    marital_status = marital_status_modes.values[0]
+                    gender = gender_modes.values[0] if not gender_modes.empty else "Unknown"
+                    city = city_modes.values[0] if not city_modes.empty else "Unknown"
+                    marital_status = marital_status_modes.values[0] if not marital_status_modes.empty else "Unknown"
                     gender_mapping = {
                         0:'Female',
                         1: 'Male',
@@ -142,9 +142,9 @@ if selected == "Customer Segmentation Model":
                     gender_modes = filtered_df['GENDER'].mode()
                     city_modes = filtered_df['CITY'].mode()
                     marital_status_modes = filtered_df['MARITAL_STATUS'].mode()
-                    gender = gender_modes.values[0]
-                    city = city_modes.values[0]
-                    marital_status = marital_status_modes.values[0]
+                    gender = gender_modes.values[0] if not gender_modes.empty else "Unknown"
+                    city = city_modes.values[0] if not city_modes.empty else "Unknown"
+                    marital_status = marital_status_modes.values[0] if not marital_status_modes.empty else "Unknown"
                     gender_mapping = {
                         0:'Female',
                         1: 'Male',
