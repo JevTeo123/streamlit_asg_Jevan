@@ -99,5 +99,5 @@ if selected == "Distinct Insights":
     day_diff_average = df.groupby(['SPEND_RANK'])['DAY_DIFF'].mean()
     st.markdown('<p class="big-font">Average difference of days in first 3 transactions by high or low spender</p>', unsafe_allow_html=True)
     st.bar_chart(day_diff_average)
-    text1 = '<p class="normal-font">Customers who are high spenders💰 typically have an average difference of days in first 3 transactions of <span style="color: green;">76 days and below</span> while customers who are low spenders 👎 have an average total number of transactions of <span style="color: red;">127 and above</span>.</p>'
+    text1 = '<p class="normal-font">Customers who are high spenders💰 typically have an average difference of days in first 3 transactions of <span style="color: green;">76 days and below</span> while customers who are low spenders 👎 have an average total number of transactions of <span style="color: red;">127 days and above</span>.</p>'
     st.markdown(text1, unsafe_allow_html = True)
