@@ -104,20 +104,20 @@ if selected == "Customer Segmentation Model":
                     gender_mapping = {
                         0:'Female',
                         1: 'Male'
-                        2: 'Undisclosed'
+                        2: 'Undisclosed',
                     }
                     marital_status_mapping = {
                         0 : 'Single',
                         1 : 'Married',
                         2 : 'Divorced/Seperated'
-                        3 : 'Undisclosed'
+                        3 : 'Undisclosed',
                     }
                     city_mapping = {
                         10613 : 'San Mateo',
                         10016 : 'New York City',
                         9261 : 'Boston',
                         9122 : 'Denver',
-                        7288 : 'Seattle'
+                        7288 : 'Seattle',
                     }
                     gender_label = gender_mapping.get(gender)
                     city_label = city_mapping.get(city)
@@ -135,20 +135,20 @@ if selected == "Customer Segmentation Model":
                     gender_mapping = {
                         0:'Female',
                         1: 'Male'
-                        2: 'Undisclosed'
+                        2: 'Undisclosed',
                     }
                     marital_status_mapping = {
                         0 : 'Single',
                         1 : 'Married',
                         2 : 'Divorced/Seperated'
-                        3 : 'Undisclosed'
+                        3 : 'Undisclosed',
                     }
                     city_mapping = {
                         10613 : 'San Mateo',
                         10016 : 'New York City',
                         9261 : 'Boston',
                         9122 : 'Denver',
-                        7288 : 'Seattle'
+                        7288 : 'Seattle',
                     }
                     gender_label = gender_mapping.get(gender)
                     city_label = city_mapping.get(city)
