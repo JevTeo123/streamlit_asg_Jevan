@@ -109,23 +109,20 @@ if selected == "Distinct Insights":
    # Group data by SPEND_RANK and FREQ_SUBCAT and count occurrences
     spender_freq_subcat_count = df.groupby(['SPEND_RANK', 'FREQ_SUBCAT']).size().reset_index(name='COUNT')
     
-    # Update the FREQ_SUBCAT values to their corresponding string labels
-    spender_freq_subcat_count['FREQ_SUBCAT'] = spender_freq_subcat_count['FREQ_SUBCAT'].map(subcategory_mapping)
-    
     # Create a clustered column chart using Altair
     chart = alt.Chart(spender_freq_subcat_count).mark_bar().encode(
-        x=alt.X('FREQ_SUBCAT:O', title='Frequent Subcategory', sort=list(subcategory_mapping.values())),
+        x=alt.X('FREQ_SUBCAT:O', title='Frequent Subcategory'),
         y=alt.Y('COUNT:Q', title='Count'),
-        color=alt.Color('SPEND_RANK:N', scale=alt.Scale(domain=['0', '1'], range=['red', 'green']), legend=alt.Legend(title='Spend Rank')),
-        column=alt.Column('SPEND_RANK:N', title='Spend Rank')
+        color=alt.Color('SPEND_RANK:N', scale=alt.Scale(domain=['0', '1'], range=['red', 'green']), legend=alt.Legend(title='Spend Rank'))
     ).properties(
-        width=300,
+        width=600,
         height=400,
         title="Count of High and Low Spenders Based on Frequent Subcategory"
     )
     
     # Display the chart in Streamlit
     st.altair_chart(chart, use_container_width=True)
+
     
     text = '<p class="normal-font">In general, being a high spender or low spender does not affect the choice of subcategory of items they are purchasing. The subcategory of items with the most count of people buying would be the hot option.</p>'
     st.markdown(text, unsafe_allow_html=True)
