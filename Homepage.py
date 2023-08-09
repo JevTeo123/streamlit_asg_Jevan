@@ -22,7 +22,7 @@ if selected == "Home":
     st.title("Welcome to Jevan's streamlit app!")
     st.sidebar.success("Select a page above.")
     
-    st.subheader('<p class="big-font">Is your customer a high spender 💰 or a low spender 👎?</p>', unsafe_allow_html=True)
+    st.subheader('Is your customer a high spender 💰 or a low spender 👎?')
     st.markdown('<p class="normal-font">This customer segmentation model seeks to divide customers into distinct groups of individuals which in our case is whether a customer is a high or low spender. This will make it easier to target specific groups of customers with tailored products so as to hit our high level goals.</p>', unsafe_allow_html=True)
 
 if selected == "Customer Segmentation Model":
