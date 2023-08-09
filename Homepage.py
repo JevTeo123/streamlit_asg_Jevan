@@ -58,10 +58,10 @@ if selected == "Customer Segmentation Model":
             AVG_QUANTITY = 4
             CITY = 10016 #Used the city of San Mateo as it has the highest sales, more room to work on
             DAY_DIFF = st.number_input('What is the average number of days between your first three transactions?', 0, 1000)
-            #FREQ_SUBCAT = st.number_input('Input Frequent Subcategory', value = 2)
-            #FREQ_SUBCAT_options = st.selectbox("What is the frequent subcategory of items you order?", list(freq_subcat_mapping.keys()))
+            FREQ_SUBCAT = st.number_input('Input Frequent Subcategory', value = 2)
+            FREQ_SUBCAT_options = st.selectbox("What is the frequent subcategory of items you order?", list(freq_subcat_mapping.keys()))
             FREQ_SUBCAT = 2
-            MEAN_PROFIT = st.number_input('Input Mean Profit of customer', 0, 100)
+            MEAN_PROFIT = 7.36
             AGE = 50
             GENDER = 1
             CHILDREN_COUNT = 0
@@ -80,7 +80,7 @@ if selected == "Customer Segmentation Model":
             """
             #Filter df by inputs
             filtered_df = df[
-            (df['MEAN_PROFIT'] == MEAN_PROFIT) &
+            (df['FREQ_SUBCAT'] == FREQ_SUBCAT) &
             (df['DAY_DIFF'] == DAY_DIFF) &
             (df['TOTAL_TRANS'] == TOTAL_TRANS)
             ]
