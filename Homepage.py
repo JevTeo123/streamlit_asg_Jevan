@@ -57,16 +57,16 @@ if selected == "Customer Segmentation Model":
             AVG_AMT = 38
             AVG_QUANTITY = 4
             CITY = 10016 #Used the city of San Mateo as it has the highest sales, more room to work on
-            DAY_DIFF = st.number_input('What is the average number of days between your first three transactions?', 0, 1000)
+            DAY_DIFF = st.number_input('Input customer\'s average number of days between their first three transactions', 0, 1000)
             #FREQ_SUBCAT = st.number_input('Input Frequent Subcategory', value = 2)
-            FREQ_SUBCAT_options = st.selectbox("What is the frequent subcategory of items you order?", list(freq_subcat_mapping.keys()))
+            FREQ_SUBCAT_options = st.selectbox("Input customer's frequent subcategory of items that they order", list(freq_subcat_mapping.keys()))
             FREQ_SUBCAT = freq_subcat_mapping[FREQ_SUBCAT_options]            #FREQ_SUBCAT = 2
             MEAN_PROFIT = 7.36
             AGE = 50
             GENDER = 1
             CHILDREN_COUNT = 0
             MARITAL_STATUS = 1
-            TOTAL_TRANS = st.number_input('How many transactions have you made with tasty bytes?', 0, 100)
+            TOTAL_TRANS = st.number_input('Input total number transactions made by customer', 0, 100)
             
             low_spender_html="""
                 <div style="background-color:#80ff80; padding:10px >
