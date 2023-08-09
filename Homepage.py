@@ -101,6 +101,11 @@ if selected == "Distinct Insights":
     st.bar_chart(day_diff_average)
     text1 = '<p class="normal-font">Customers who are high spenders💰 typically have an average difference of days in first 3 transactions of <span style="color: green;">76 days and below</span> while customers who are low spenders 👎 have an average total number of transactions of <span style="color: red;">127 days and above</span>.</p>'
     st.markdown(text1, unsafe_allow_html = True)
+    subcategory_mapping = {
+    0: "Cold Option",
+    1: "Warm Option",
+    2: "Hot Option"
+    }
     # Group data by SPEND_RANK and FREQ_SUBCAT and count occurrences
     spender_freq_subcat_count = df.groupby(['SPEND_RANK', 'FREQ_SUBCAT']).size().reset_index(name='COUNT')
     
