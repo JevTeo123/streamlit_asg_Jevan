@@ -109,7 +109,7 @@ if selected == "Customer Segmentation Model":
                     marital_status_mapping = {
                         0 : 'Single',
                         1 : 'Married',
-                        2 : 'Divorced/Seperated'
+                        2 : 'Divorced/Seperated',
                         3 : 'Undisclosed'
                     }
                     city_mapping = {
@@ -140,7 +140,7 @@ if selected == "Customer Segmentation Model":
                     marital_status_mapping = {
                         0 : 'Single',
                         1 : 'Married',
-                        2 : 'Divorced/Seperated'
+                        2 : 'Divorced/Seperated',
                         3 : 'Undisclosed'
                     }
                     city_mapping = {
