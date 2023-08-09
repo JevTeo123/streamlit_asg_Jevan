@@ -61,7 +61,7 @@ if selected == "Customer Segmentation Model":
             #FREQ_SUBCAT = st.number_input('Input Frequent Subcategory', value = 2)
             FREQ_SUBCAT_options = st.selectbox("What is the frequent subcategory of items you order?", list(freq_subcat_mapping.keys()))
             FREQ_SUBCAT = freq_subcat_mapping[FREQ_SUBCAT_options]
-            MEAN_PROFIT =7.36
+            MEAN_PROFIT = st.number_input('Input Mean Profit of customer', 0, 100)
             AGE = 50
             GENDER = 1
             CHILDREN_COUNT = 0
