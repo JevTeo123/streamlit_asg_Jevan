@@ -80,7 +80,7 @@ if selected == "Customer Segmentation Model":
             """
             #Filter df by inputs
             filtered_df = df[
-            (df['FREQ_SUBCAT'] == FREQ_SUBCAT) &
+            (df['MEAN_PROFIT'] == MEAN_PROFIT) &
             (df['DAY_DIFF'] == DAY_DIFF) &
             (df['TOTAL_TRANS'] == TOTAL_TRANS)
             ]
