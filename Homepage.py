@@ -107,8 +107,6 @@ if selected == "Customer Segmentation Model":
         
                 if output == 0:
                     st.markdown(low_spender_html, unsafe_allow_html=True)
-                    text1 = '<p class="normal-font">Customer Behavioural Insights</p>'
-                    st.markdown(text1, unsafe_allow_html = True)
                     gender_modes = filtered_df['GENDER'].mode()
                     city_modes = filtered_df['CITY'].mode()
                     marital_status_modes = filtered_df['MARITAL_STATUS'].mode()
@@ -137,7 +135,7 @@ if selected == "Customer Segmentation Model":
                     city_label = city_mapping.get(city)
                     marital_status_label = marital_status_mapping.get(marital_status)
                     formatted_insight = "Based on the input, Customer is most likely to be a {} that lives in {} and is {}.".format(gender_label, city_label, marital_status_label) 
-                    st.subheader("Customer Behavioural Insights")
+                    st.subheader("Customer Behavioural Insights🔍")
                     st.write(formatted_insight)
                 elif output == 1:
                     st.markdown(high_spender_html, unsafe_allow_html=True)
@@ -174,7 +172,7 @@ if selected == "Customer Segmentation Model":
     if __name__ == "__main__":
                 main()
 if selected == "Distinct Insights":
-    st.title("Distinct Insights")
+    st.title("Distinct Insights 📈")
     st.markdown('<p class="big-font">Average Total Transaction by high or low spender</p>', unsafe_allow_html=True)
     spender_avg_trans = df.groupby(['SPEND_RANK'])['TOTAL_TRANS'].mean()
     st.bar_chart(spender_avg_trans)
