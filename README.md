@@ -1,11 +1,10 @@
 # Project Title
-
+The purpose of this project is to query data from the snowflake database and create a customer segmentation model using the data to classify whether the customers are high or low spenders using a machine learning model. A streamlit app is then created, revolving around the machine learning model that allows users to enter specific customer behaviors to see if the customer is a high or low spender.
 # Quickstart/Demo
 
 # Table of Contents
 
 - [Project Title](#project-title)
-The purpose of this project is to query data from the snowflake database and create a customer segmentation model using the data to classify whether the customers are high or low spenders using a machine learning model. A streamlit app is then created, revolving around the machine learning model that allows users to enter specific customer behaviors to see if the customer is a high or low spender.
 - [Quickstart/Demo](#quickstartdemo)
 - [Table of Contents](#table-of-contents)
 - [Installation](#installation)
