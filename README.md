@@ -5,7 +5,6 @@ The purpose of this project is to query data from the snowflake database and cre
 # Table of Contents
 
 - [Project Title](#project-title)
-- [Quickstart/Demo](#quickstartdemo)
 - [Table of Contents](#table-of-contents)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -13,12 +12,12 @@ The purpose of this project is to query data from the snowflake database and cre
 - [Contribute](#contribute)
 - [License](#license)
 
-# Installation
-[(Back to top)](#table-of-contents)
 
 # Usage
 [(Back to top)](#table-of-contents)
-
+The model has already been pickled and readily available in the github. To see how customer behaviour affects how they are a high or low spender, this [streamlit] (https://appasgjevan-m6wynvdt6f62d3xd2x28em.streamlit.app/) app can be used to accomplish this task. 
+![image](https://github.com/JevTeo123/streamlit_asg_Jevan/assets/123255675/69ce6a35-30a0-4755-8ca6-c89de301b131)
+The first page of the streamlit app shows the purpose of the streamlit app as well as a sidebar to toggle between the different pages.
 # Development
 [(Back to top)](#table-of-contents)
 
