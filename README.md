@@ -8,10 +8,13 @@ The purpose of this project is to query data from the snowflake database and cre
 - [Table of Contents](#table-of-contents)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Development](#development)
-- [Contribute](#contribute)
-- [License](#license)
 
+# Installation
+To run the ipynb notebook, users can pip install all the required dependencies from the ```requirements.txt``` file.
+```py
+conda env create <project_name>
+pip install -r requirements.txt
+```
 
 # Usage
 [(Back to top)](#table-of-contents)
@@ -23,11 +26,4 @@ The first page of the streamlit app shows the purpose of the streamlit app as we
 The second page contains the input boxes where users can enter in different values to mimic different customer behaviours and see how they affect whether a customer would be a high or low spender. This page also gives users a retrospective view as to the possible areas where these types of customers can be found to maximize on profits.
 ![image](https://github.com/JevTeo123/streamlit_asg_Jevan/assets/123255675/8c558946-36c3-441b-bfd5-a4c9a6d4a7ba)
 The third page contains some distinct insights that can be derived from the data about how the different inputs might cause a customer to be a high or low spender.
-# Development
-[(Back to top)](#table-of-contents)
 
-# Contribute
-[(Back to top)](#table-of-contents)
-
-# License
-[(Back to top)](#table-of-contents)
