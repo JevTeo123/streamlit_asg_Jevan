@@ -16,6 +16,23 @@ conda env create <project_name>
 pip install -r requirements.txt
 ```
 
+Credentials have to be replaced in the ipynb file to retreive contents from the database.
+```py
+accountname = getpass.getpass("Enter account name")
+username = getpass.getpass("Enter Username")
+password = getpass.getpass("Enter Password")
+connection_parameters = {
+  "account": accountname,
+  "user": username,
+  "password": password,
+  "role": "SYSADMIN",
+  "database": "FROSTBYTE_TASTY_BYTES",
+  "warehouse": "COMPUTE_WH",
+  "schema": "RAW_POS"
+}
+session = Session.builder.configs(connection_parameters).create()
+```
+
 # Usage
 [(Back to top)](#table-of-contents)
 
